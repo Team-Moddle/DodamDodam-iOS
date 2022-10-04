@@ -8,7 +8,7 @@ import Foundation
 private class BundleFinder {}
 
 extension Foundation.Bundle {
-    /// Since JangGaeJaRang is a application, the bundle for classes within this module can be used directly.
+    /// Since DodamDodam is a application, the bundle for classes within this module can be used directly.
     static var module: Bundle = {
         return Bundle(for: BundleFinder.self)
     }()
@@ -17,7 +17,7 @@ extension Foundation.Bundle {
 // MARK: - Objective-C Bundle Accessor
 
 @objc
-public class JangGaeJaRangResources: NSObject {
+public class DodamDodamResources: NSObject {
    @objc public class var bundle: Bundle {
          return .module
    }
