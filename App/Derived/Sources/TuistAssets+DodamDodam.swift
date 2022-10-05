@@ -19,7 +19,15 @@
 public enum DodamDodamAsset {
   public static let _6B6B6B = DodamDodamColors(name: "6B6B6B")
   public static let accentColor = DodamDodamColors(name: "AccentColor")
-  public static let ffc85C = DodamDodamColors(name: "FFC85C")
+  public static let backGroundColor = DodamDodamColors(name: "BackGroundColor")
+  public static let gray = DodamDodamColors(name: "Gray")
+  public static let main01 = DodamDodamColors(name: "Main01")
+  public static let main02 = DodamDodamColors(name: "Main02")
+  public static let main03 = DodamDodamColors(name: "Main03")
+  public static let main04 = DodamDodamColors(name: "Main04")
+  public static let main05 = DodamDodamColors(name: "Main05")
+  public static let main06 = DodamDodamColors(name: "Main06")
+  public static let mainColor = DodamDodamColors(name: "MainColor")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
