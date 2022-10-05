@@ -13,7 +13,7 @@ public extension Project {
         infoPlist: InfoPlist = .default
     ) -> Project {
         let organizationName = "org.Moddle"
-        let deploymentTarget = DeploymentTarget.iOS(targetVersion: "15.0", devices: [.iphone, .ipad])
+        let deploymentTarget = DeploymentTarget.iOS(targetVersion: "16.0", devices: [.iphone, .ipad])
         
         let settings: Settings = .settings(
             base: [:],

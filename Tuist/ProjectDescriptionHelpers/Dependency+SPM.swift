@@ -14,6 +14,6 @@ public extension TargetDependency.SPM {
 public extension Package {
     static let Firebase = Package.remote(
         url: "https://github.com/firebase/firebase-ios-sdk.git",
-        requirement: .upToNextMajor(from: "9.4.0")
+        requirement: .upToNextMajor(from: "9.6.0")
     )
 }
