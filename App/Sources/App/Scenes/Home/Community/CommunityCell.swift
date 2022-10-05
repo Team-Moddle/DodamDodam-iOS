@@ -8,6 +8,8 @@ struct CommunityCell: View {
             AsyncImage(
                 url: URL(string: data.imageUrlString)) { image in
                     image
+                        .resizable()
+                        .frame(width: 44, height: 53)
                         .scaledToFit()
                 } placeholder: {
                     Color.gray
@@ -42,7 +44,7 @@ struct CommunityCell: View {
         .frame(height: 73)
         .overlay(
             RoundedRectangle(cornerRadius: 3)
-                .stroke(Color.gray)
+                .stroke(Color("DADADA"))
         )
     }
 }
@@ -50,6 +52,7 @@ struct CommunityCell: View {
 struct CommunityCell_Previews: PreviewProvider {
     static var previews: some View {
         CommunityCell(data: .init(
+            id: 0,
             imageUrlString: "",
             title: "우리 아이 ADHD일까요?",
             location: "서울특별시 강남구",
