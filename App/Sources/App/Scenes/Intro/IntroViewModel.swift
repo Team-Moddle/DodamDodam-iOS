@@ -9,7 +9,7 @@ final class IntroViewModel: ObservableObject {
         
         Task {
             do {
-                let isInitialSignin = try await AuthService.shared.signin(idToken: idToken, nonce:nonce)
+                _ = try await AuthService.shared.signin(idToken: idToken, nonce:nonce)
             }
         }
     }
