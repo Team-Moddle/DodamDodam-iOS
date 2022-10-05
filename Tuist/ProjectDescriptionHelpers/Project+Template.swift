@@ -12,7 +12,7 @@ public extension Project {
         entitlements: Path? = nil,
         infoPlist: InfoPlist = .default
     ) -> Project {
-        let organizationName = "org.spaghetti"
+        let organizationName = "org.Moddle"
         let deploymentTarget = DeploymentTarget.iOS(targetVersion: "15.0", devices: [.iphone, .ipad])
         
         let settings: Settings = .settings(
