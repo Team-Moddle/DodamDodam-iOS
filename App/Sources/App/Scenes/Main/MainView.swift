@@ -21,7 +21,7 @@ struct MainView: View {
                 Spacer()
                 HStack {
                     Spacer()
-                    ForEach(0..<tabImageNames.count) { num in
+                    ForEach(0..<tabImageNames.count, id: \.self) { num in
                         VStack(spacing: 0) {
                             Image(systemName: tabImageNames[num])
                                 .frame(width: 35, height: 35)
