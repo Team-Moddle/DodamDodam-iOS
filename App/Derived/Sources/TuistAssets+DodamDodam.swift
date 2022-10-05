@@ -28,6 +28,9 @@ public enum DodamDodamAsset {
   public static let main05 = DodamDodamColors(name: "Main05")
   public static let main06 = DodamDodamColors(name: "Main06")
   public static let mainColor = DodamDodamColors(name: "MainColor")
+  public static let dadada = DodamDodamColors(name: "DADADA")
+  public static let eeeeee = DodamDodamColors(name: "EEEEEE")
+  public static let ffc85C = DodamDodamColors(name: "FFC85C")
   public static let googleLogoImage = DodamDodamImages(name: "googleLogoImage")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
