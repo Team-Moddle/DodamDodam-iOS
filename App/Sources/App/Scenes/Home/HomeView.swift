@@ -8,7 +8,7 @@ struct HomeView: View {
             VStack(spacing: 0) {
                 Spacer()
                     .frame(height: 16)
-                List(viewModel.list, id: \.title) { model in
+                List(viewModel.list, id: \.id) { model in
                     CommunityCell(data: model)
                         .padding(.bottom, 8)
                         .listRowInsets(EdgeInsets())
