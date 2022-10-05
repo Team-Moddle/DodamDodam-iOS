@@ -14,7 +14,7 @@ struct MainView: View {
             case 1:
                 ChatView()
             case 2:
-                LocalPlaceView()
+                FacilityView()
             default:
                 ProfileView()
             }
