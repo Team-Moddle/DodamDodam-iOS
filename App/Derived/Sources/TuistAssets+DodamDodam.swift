@@ -18,6 +18,7 @@
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum DodamDodamAsset {
   public static let accentColor = DodamDodamColors(name: "AccentColor")
+  public static let ffc85C = DodamDodamColors(name: "FFC85C")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
