@@ -40,7 +40,10 @@ struct MainView: View {
                 .padding(.top, 5)
                 .padding(.bottom, 25)
                 .background(Color.white)
-                .cornerRadius(10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color("6B6B6B"), lineWidth: 0.2)
+                )
             }
             .ignoresSafeArea()
         }
