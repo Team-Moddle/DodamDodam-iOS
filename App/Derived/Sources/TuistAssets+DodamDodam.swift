@@ -17,6 +17,7 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum DodamDodamAsset {
+  public static let _6B6B6B = DodamDodamColors(name: "6B6B6B")
   public static let accentColor = DodamDodamColors(name: "AccentColor")
   public static let backGroundColor = DodamDodamColors(name: "BackGroundColor")
   public static let gray = DodamDodamColors(name: "Gray")
@@ -27,6 +28,7 @@ public enum DodamDodamAsset {
   public static let main05 = DodamDodamColors(name: "Main05")
   public static let main06 = DodamDodamColors(name: "Main06")
   public static let mainColor = DodamDodamColors(name: "MainColor")
+  public static let googleLogoImage = DodamDodamImages(name: "googleLogoImage")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
@@ -62,6 +64,46 @@ public extension DodamDodamColors.Color {
     self.init(named: asset.name, in: bundle, compatibleWith: nil)
     #elseif os(macOS)
     self.init(named: NSColor.Name(asset.name), bundle: bundle)
+    #elseif os(watchOS)
+    self.init(named: asset.name)
+    #endif
+  }
+}
+
+public struct DodamDodamImages {
+  public fileprivate(set) var name: String
+
+  #if os(macOS)
+  public typealias Image = NSImage
+  #elseif os(iOS) || os(tvOS) || os(watchOS)
+  public typealias Image = UIImage
+  #endif
+
+  public var image: Image {
+    let bundle = DodamDodamResources.bundle
+    #if os(iOS) || os(tvOS)
+    let image = Image(named: name, in: bundle, compatibleWith: nil)
+    #elseif os(macOS)
+    let image = bundle.image(forResource: NSImage.Name(name))
+    #elseif os(watchOS)
+    let image = Image(named: name)
+    #endif
+    guard let result = image else {
+      fatalError("Unable to load image asset named \(name).")
+    }
+    return result
+  }
+}
+
+public extension DodamDodamImages.Image {
+  @available(macOS, deprecated,
+    message: "This initializer is unsafe on macOS, please use the DodamDodamImages.image property")
+  convenience init?(asset: DodamDodamImages) {
+    #if os(iOS) || os(tvOS)
+    let bundle = DodamDodamResources.bundle
+    self.init(named: asset.name, in: bundle, compatibleWith: nil)
+    #elseif os(macOS)
+    self.init(named: NSImage.Name(asset.name))
     #elseif os(watchOS)
     self.init(named: asset.name)
     #endif

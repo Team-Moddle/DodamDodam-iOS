@@ -10,6 +10,7 @@ import SwiftUI
 import AuthenticationServices
 
 struct IntroView: View {
+    @StateObject var viewModel = IntroViewModel()
     var body: some View {
         VStack{
             Button {
@@ -31,15 +32,17 @@ struct IntroView: View {
             .padding(.horizontal, 16)
             
             SignInWithAppleButton { request in
-                request.requestedScopes = [.fullName, .email]
+                request.requestedScopes = [.email]
                 let nonce = FirebaseAppleUtils.randomNonceString()
                 request.nonce = nonce
+                viewModel.nonce = nonce
             } onCompletion: { res in
                 switch res {
                 case let .success(auth):
                     guard let cred = auth.credential as? ASAuthorizationAppleIDCredential else {
                         return
                     }
+                    viewModel.appleSigninCompleted(cred: cred.identityToken ?? .init())
                     print("성공")
                 case .failure:
                     print("실패")
