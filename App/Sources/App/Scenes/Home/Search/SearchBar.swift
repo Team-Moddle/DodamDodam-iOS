@@ -18,8 +18,8 @@ struct SearchBar: View {
             }
         }
         .padding(.horizontal, 8)
-        .frame(height: 46)
-        .background(Color(uiColor: UIColor.lightGray))
+        .frame(width: .infinity, height: 46)
+        .background(Color("EEEEEE"))
         .cornerRadius(5)
     }
 }
