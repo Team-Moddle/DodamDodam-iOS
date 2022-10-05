@@ -2,7 +2,8 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selectedIndex = 0
-    let tabImageNames = ["house.fill", "message", "building.columns.circle", "person"]
+    let tabImageNames = ["house", "message", "building.columns.circle", "person"]
+    let tabFillImageNames = ["house.fill", "message.fill", "building.columns.circle.fill", "person.fill"]
     let tabNames = ["홈", "채팅", "시설", "프로필"]
 
     var body: some View {
@@ -23,7 +24,7 @@ struct MainView: View {
                     Spacer()
                     ForEach(0..<tabImageNames.count, id: \.self) { num in
                         VStack(spacing: 0) {
-                            Image(systemName: tabImageNames[num])
+                            Image(systemName: selectedIndex == num ? tabFillImageNames[num] : tabImageNames[num])
                                 .frame(width: 35, height: 35)
                                 .foregroundColor(selectedIndex == num ? Color("FFC85C") : Color.black)
                             Text(tabNames[num])
