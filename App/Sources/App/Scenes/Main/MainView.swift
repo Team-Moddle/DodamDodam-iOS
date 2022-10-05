@@ -2,9 +2,9 @@ import SwiftUI
 
 struct MainView: View {
     @State private var selectedIndex = 0
-    let tabImageNames = ["house", "message", "building.columns.circle", "person"]
-    let tabFillImageNames = ["house.fill", "message.fill", "building.columns.circle.fill", "person.fill"]
-    let tabNames = ["홈", "채팅", "시설", "프로필"]
+    let tabImageNames = ["house", "message", "doc.plaintext", "building.columns.circle", "person"]
+    let tabFillImageNames = ["house.fill", "message.fill", "doc.plaintext.fill", "building.columns.circle.fill", "person.fill"]
+    let tabNames = ["홈", "채팅", "정보글", "시설", "프로필"]
 
     var body: some View {
         ZStack {
@@ -14,6 +14,8 @@ struct MainView: View {
             case 1:
                 ChatView()
             case 2:
+                InformationView()
+            case 3:
                 FacilityView()
             default:
                 ProfileView()
