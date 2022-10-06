@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 struct InformationView: View {
     @StateObject var viewModel = InformationViewModel()

@@ -2,7 +2,8 @@ import SwiftUI
 
 struct Facility1View: View {
     @StateObject var viewModel = FacilityViewModel()
-    @State var num: Int = 0
+    @State var category: Category = .all
+    @State var featureCategory: FeatureCategory = .all
     
     var body: some View {
         NavigationView {
@@ -13,44 +14,72 @@ struct Facility1View: View {
                     HStack(spacing: 7) {
                         Spacer()
                             .frame(width: 20)
-                        Button {
-                            num = num == 1 ? 0 : 1
-                            num == 1 ? viewModel.fetchFilterHospital() : viewModel.fetchAppear()
-                        } label: {
-                            Text("병원")
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundColor(.white)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 10)
-                                .background(num == 1 ? Color("FFC85C") : .gray)
-                                .cornerRadius(17)
-                                .frame(height: 27)
-                        }
-                        Button {
-                            num = num == 2 ? 0 : 2
-                            num == 2 ? viewModel.fetchFilterRestraunt() : viewModel.fetchAppear()
-                        } label: {
-                            Text("식당")
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundColor(.white)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 10)
-                                .background(num == 2 ? Color("FFC85C") : .gray)
-                                .cornerRadius(17)
-                                .frame(height: 27)
-                        }
-                        Button {
-                            num = num == 3 ? 0 : 3
-                            num == 3 ? viewModel.fetchFilterPlayground() : viewModel.fetchAppear()
-                        } label: {
-                            Text("놀이시설")
-                                .font(.system(size: 12, weight: .medium))
-                                .foregroundColor(.white)
-                                .padding(.vertical, 8)
-                                .padding(.horizontal, 10)
-                                .background(num == 3 ? Color("FFC85C") : .gray)
-                                .cornerRadius(17)
-                                .frame(height: 27)
+                        Group {
+                            Button {
+                                featureCategory = featureCategory == .adhd ? .all : .adhd
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("ADHD")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .adhd ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .allergy ? .all : .allergy
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("알레르기")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .allergy ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .autism ? .all : .autism
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("자폐")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .autism ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .atopy ? .all : .atopy
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("아토피")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .atopy ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .etc ? .all : .etc
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("기타")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .etc ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
                         }
                         Spacer()
                         Button {

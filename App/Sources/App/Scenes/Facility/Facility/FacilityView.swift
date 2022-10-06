@@ -2,7 +2,8 @@ import SwiftUI
 
 struct FacilityView: View {
     @StateObject var viewModel = FacilityViewModel()
-    @State var num: Int = 0
+    @State var category: Category = .all
+    @State var featureCategory: FeatureCategory = .all
     
     var body: some View {
         NavigationView {
@@ -49,16 +50,88 @@ struct FacilityView: View {
                                 num = num == 3 ? 0 : 3
                                 num == 3 ? viewModel.fetchFilterPlayground() : viewModel.fetchAppear()
                             }
+=======
+                        Group {
+                            Button {
+                                featureCategory = featureCategory == .adhd ? .all : .adhd
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("ADHD")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .adhd ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .allergy ? .all : .allergy
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("알레르기")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .allergy ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .autism ? .all : .autism
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("자폐")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .autism ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .atopy ? .all : .atopy
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("아토피")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .atopy ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                            Button {
+                                featureCategory = featureCategory == .etc ? .all : .etc
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
+                            } label: {
+                                Text("기타")
+                                    .font(.system(size: 12, weight: .medium))
+                                    .foregroundColor(.white)
+                                    .padding(.vertical, 8)
+                                    .padding(.horizontal, 10)
+                                    .background(featureCategory == .etc ? Color("FFC85C") : .gray)
+                                    .cornerRadius(17)
+                                    .frame(height: 27)
+                            }
+                        }
+>>>>>>> Stashed changes
                         Spacer()
                         Menu {
                             Button("병원") {
-                                
+                                category = category == .hospital ? .all : .hospital
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
                             }
                             Button("놀이시설") {
-                                
+                                category = category == .playground ? .all : .playground
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
                             }
                             Button("식당") {
-                                
+                                category = category == .restaurant ? .all : .restaurant
+                                viewModel.filterCategoryAndFeatureCategory(category: category, featureCategory: featureCategory)
                             }
                         } label: {
                             RoundedRectangle(cornerRadius: 5)
@@ -66,7 +139,7 @@ struct FacilityView: View {
                                 .frame(width: 60, height: 30)
                                 .overlay {
                                     HStack {
-                                        Text("선택")
+                                        Text(category == .all ? "선택" : category.rawValue)
                                             .font(.system(size: 14))
                                         Image(systemName: "chevron.down")
                                     }

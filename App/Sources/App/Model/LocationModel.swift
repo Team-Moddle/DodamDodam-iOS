@@ -6,6 +6,7 @@ struct LocationModel {
     let address: String
     let imageUrlString: String
     let category: Category
+    let featureCategory: FeatureCategory
     let commentCount: Int
     let heartCount: Int
 }
