@@ -64,6 +64,9 @@ class FacilityViewModel: ObservableObject {
         locationList = list
     }
 
+    func filterCategory(category: Category) {
+        locationList = list.filter { $0.category == category }
+    }
     func fetchFilterHospital() {
         locationList = list.filter { $0.category == .hospital }
     }

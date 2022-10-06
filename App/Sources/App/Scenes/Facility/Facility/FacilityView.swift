@@ -63,9 +63,31 @@ struct FacilityView: View {
                                 .padding(8)
                         }
                         Spacer()
-                            .frame(width: 20)
-                        
+                        Menu {
+                            Button("병원") {
+                                
+                            }
+                            Button("놀이시설") {
+                                
+                            }
+                            Button("식당") {
+                                
+                            }
+                        } label: {
+                            RoundedRectangle(cornerRadius: 5)
+                                .strokeBorder(Color.black)
+                                .frame(width: 60, height: 30)
+                                .overlay {
+                                    HStack {
+                                        Text("선택")
+                                            .font(.system(size: 14))
+                                        Image(systemName: "chevron.down")
+                                    }
+                                    .foregroundColor(.black)
+                                }
+                        }
                     }
+                    .padding(.horizontal, 14)
                     Spacer()
                         .frame(height: 16)
                     List(viewModel.locationList, id: \.id) { model in
