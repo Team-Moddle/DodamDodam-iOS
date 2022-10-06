@@ -30,7 +30,7 @@ struct LocationCell: View {
                 Spacer()
                     .frame(height: 33)
                 HStack(spacing: 0) {
-                    Text(data.category.rawValue)
+                    Text(data.featureCategory.rawValue)
                         .font(.system(size: 8, weight: .bold))
                         .foregroundColor(.white)
                         .padding(.horizontal, 8)
@@ -75,6 +75,7 @@ struct LocationCell_Previews: PreviewProvider {
             address: "서울특별시 강남구",
             imageUrlString: "https://cdn.discordapp.com/attachments/1026851673001431091/1027230330891010249/unknown.png",
             category: .hospital,
+            featureCategory: .adhd,
             commentCount: 1,
             heartCount: 1
         ))

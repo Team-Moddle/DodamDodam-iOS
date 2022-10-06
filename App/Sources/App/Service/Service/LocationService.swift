@@ -18,6 +18,7 @@ final class LocationService {
                 address: dict["address"] as! String,
                 imageUrlString: dict["imageUrlString"] as! String,
                 category: Category(rawValue: dict["category"] as! String) ?? .hospital,
+                featureCategory: FeatureCategory(rawValue: dict["featureCategory"] as! String) ?? .adhd,
                 commentCount: dict["commentCount"] as! Int,
                 heartCount: dict["heartCount"] as! Int
             )
