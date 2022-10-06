@@ -2,6 +2,7 @@ import SwiftUI
 
 struct InformationDetailView: View {
     @StateObject var viewModel: InformationDetailViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView {
@@ -37,6 +38,17 @@ struct InformationDetailView: View {
             }
             .padding(.horizontal, 16)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.black)
+                }
+            }
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
