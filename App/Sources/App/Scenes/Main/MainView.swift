@@ -12,7 +12,7 @@ struct MainView: View {
             case 0:
                 HomeView()
             case 1:
-                ChatView()
+                ChatListView()
             case 2:
                 InformationView()
             case 3:
