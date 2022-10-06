@@ -12,9 +12,9 @@ class ChatListViewModel: ObservableObject {
         ),
         .init(
             id: 1,
-            imageUrlString: "https://avatars.githubusercontent.com/u/74440939?v=4",
-            name: "최형우",
-            address: "용두동",
+            imageUrlString: "https://cdn.discordapp.com/attachments/1026841499612225549/1027424962790817802/image_6.png",
+            name: "영희맘",
+            address: "양산동",
             time: "2시간 전",
             message: "네"
         ),
@@ -36,11 +36,11 @@ class ChatListViewModel: ObservableObject {
         ),
         .init(
             id: 4,
-            imageUrlString: "https://avatars.githubusercontent.com/u/82503797?v=4",
-            name: "우상범",
-            address: "건대",
+            imageUrlString: "https://avatars.githubusercontent.com/u/74440939?v=4",
+            name: "최형우",
+            address: "용두동",
             time: "7시간 전",
-            message: "오늘 야식 치킨이래"
+            message: "으악"
         )
     ]
 }
