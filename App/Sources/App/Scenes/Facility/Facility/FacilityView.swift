@@ -53,16 +53,6 @@ struct FacilityView: View {
                                 .frame(height: 27)
                         }
                         Spacer()
-                        Button {
-                            print("!!!!!")
-                        } label: {
-                            Image(systemName: "plus")
-                                .resizable()
-                                .foregroundColor(.black)
-                                .frame(width: 15, height: 15)
-                                .padding(8)
-                        }
-                        Spacer()
                         Menu {
                             Button("병원") {
                                 
