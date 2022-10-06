@@ -51,7 +51,7 @@ struct LocationCell: View {
                     Image(systemName: "heart")
                         .resizable()
                         .frame(width: 17, height: 17)
-                        .foregroundColor(.gray)
+                        .foregroundColor(Color("Main01"))
                         .padding(.trailing, 4)
                     Text("\(data.heartCount)")
                         .font(.system(size: 11))
