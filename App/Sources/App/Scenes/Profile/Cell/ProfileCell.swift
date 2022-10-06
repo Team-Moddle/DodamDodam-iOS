@@ -25,10 +25,10 @@ struct ProfileCell: View {
             if isSelected {
                 Color(.gray)
                     .frame(width: .infinity, height: 1)
-                ProfileBungInfoView(isSelected: child.bool1, name: "천식")
-                ProfileBungInfoView(isSelected: child.bool2, name: "알레르기성 비염")
-                ProfileBungInfoView(isSelected: child.bool3, name: "아토피 피부염")
-                ProfileBungInfoView(isSelected: child.bool4, name: "기관지염")
+                ProfileBungInfoView(isSelected: child.bool1, name: "ADHD")
+                ProfileBungInfoView(isSelected: child.bool2, name: "알레르기")
+                ProfileBungInfoView(isSelected: child.bool3, name: "자폐")
+                ProfileBungInfoView(isSelected: child.bool4, name: "아토피")
                 ProfileBungInfoView(isSelected: child.bool5, name: "기타")
                 if child.bool5 {
                     Text(child.guitar)

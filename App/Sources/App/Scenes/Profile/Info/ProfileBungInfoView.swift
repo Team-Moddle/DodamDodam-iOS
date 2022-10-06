@@ -21,6 +21,6 @@ struct ProfileBungInfoView: View {
 
 struct ProfileButton_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileBungInfoView(isSelected: false, name: "천식")
+        ProfileBungInfoView(isSelected: false, name: "ADGD")
     }
 }
