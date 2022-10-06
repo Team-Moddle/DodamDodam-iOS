@@ -105,18 +105,18 @@ struct FacilityView: View {
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(.white)
                         Spacer()
-                        Button {
-                            print("신청하기")
-                        } label: {
-                            Text("신청하기")
-                                .padding(.vertical, 6)
-                                .padding(.horizontal, 9)
-                                .frame(height: 30)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                                .foregroundColor(Color("737886"))
-                                .font(.system(size: 11, weight: .bold))
-                        }
+                        NavigationLink (
+                            destination: FacilityAddView(),
+                            label: {
+                                Text("신청하기")
+                                    .padding(.vertical, 6)
+                                    .padding(.horizontal, 9)
+                                    .frame(height: 30)
+                                    .background(Color.white)
+                                    .cornerRadius(10)
+                                    .foregroundColor(Color("737886"))
+                                    .font(.system(size: 11, weight: .bold))
+                            })
                         Spacer()
                             .frame(width: 20)
                     }
