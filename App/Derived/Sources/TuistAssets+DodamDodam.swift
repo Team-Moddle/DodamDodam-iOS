@@ -40,6 +40,7 @@ public enum DodamDodamAsset {
   public static let chat = DodamDodamImages(name: "Chat")
   public static let googleLogoImage = DodamDodamImages(name: "googleLogoImage")
   public static let hospital = DodamDodamImages(name: "hospital")
+  public static let map = DodamDodamImages(name: "map")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

@@ -69,10 +69,13 @@ struct FacilityView: View {
                     Spacer()
                         .frame(height: 16)
                     List(viewModel.locationList, id: \.id) { model in
-                        LocationCell(data: model)
-                            .padding(.bottom, 8)
-                            .listRowInsets(EdgeInsets())
-                            .listRowSeparator(.hidden)
+                        NavigationLink(
+                            destination: FacilityDetailView(data: model)) {
+                                LocationCell(data: model)
+                                    .padding(.bottom, 8)
+                                    .listRowInsets(EdgeInsets())
+                                    .listRowSeparator(.hidden)
+                            }
                     }
                     .listStyle(.inset)
                     .padding(.horizontal, 20)
