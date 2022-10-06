@@ -6,4 +6,5 @@ struct InformationModel {
     let title: String
     let content: String
     let likeCount: Int
+    let category: FeatureCategory
 }

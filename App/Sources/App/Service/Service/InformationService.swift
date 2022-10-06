@@ -17,7 +17,8 @@ final class InformationService {
                 imageUrlString: dict["imageUrlString"] as! String,
                 title: dict["title"] as! String,
                 content: dict["content"] as! String,
-                likeCount: dict["likeCount"] as! Int
+                likeCount: dict["likeCount"] as! Int,
+                category: .init(rawValue: dict["category"] as! String) ?? .etc
             )
             res.append(info)
         }
@@ -27,7 +28,8 @@ final class InformationService {
     func createInfo(
         title: String,
         content: String,
-        imageUrl: String
+        imageUrl: String,
+        category: FeatureCategory
     ) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let data: [String: Any] = [
@@ -35,6 +37,7 @@ final class InformationService {
             "content": content,
             "imageUrlString": imageUrl,
             "likeCount": 0,
+            "category": category.rawValue,
             "userPK": uid
         ]
         _ = try await Firestore.firestore().collection("/info").addDocument(data: data)
