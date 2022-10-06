@@ -69,13 +69,20 @@ struct FacilityView: View {
                     Spacer()
                         .frame(height: 16)
                     List(viewModel.locationList, id: \.id) { model in
-                        NavigationLink(
-                            destination: FacilityDetailView(data: model)) {
-                                LocationCell(data: model)
-                                    .padding(.bottom, 8)
-                                    .listRowInsets(EdgeInsets())
-                                    .listRowSeparator(.hidden)
+                        ZStack {
+                            NavigationLink {
+                                FacilityDetailView(data: model)
+                            } label: {
+                                EmptyView()
                             }
+                            .opacity(0.0)
+                            
+                            LocationCell(data: model)
+                                .padding(.bottom, 2)
+                                .listRowInsets(EdgeInsets())
+                                .listRowSeparator(.hidden)
+                        }
+                        
                     }
                     .listStyle(.inset)
                     .padding(.horizontal, 20)
@@ -102,8 +109,8 @@ struct FacilityView: View {
                             .font(.system(size: 12, weight: .medium))
                             .foregroundColor(.white)
                         Spacer()
-                        Button {
-                            print("신청하기")
+                        NavigationLink {
+                            FacilityAddView()
                         } label: {
                             Text("신청하기")
                                 .padding(.vertical, 6)
@@ -114,6 +121,7 @@ struct FacilityView: View {
                                 .foregroundColor(Color("737886"))
                                 .font(.system(size: 11, weight: .bold))
                         }
+
                         Spacer()
                             .frame(width: 20)
                     }
