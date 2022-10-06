@@ -11,7 +11,7 @@ struct InformationView: View {
                     }
                 }
                 .padding(.vertical, 12)
-                List(viewModel.infoList, id: \.id) { info in
+                List(viewModel.searchList, id: \.id) { info in
                     ZStack {
                         NavigationLink {
                             InformationDetailView(viewModel: .init(information: info))
@@ -81,26 +81,29 @@ struct InformationView: View {
             }
             .padding(.horizontal, 16)
         }
+        .onAppear {
+            viewModel.fetchAppear()
+        }
     }
     
     @ViewBuilder
     func tagButton(category: FeatureCategory) -> some View {
-        Button {
-            if viewModel.selectedCategory == category {
-                viewModel.selectedCategory = nil
-            } else {
-                viewModel.selectedCategory = category
+        Text(category.rawValue)
+            .font(.system(size: 12, weight: .medium))
+            .foregroundColor(.white)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 10)
+            .background(viewModel.selectedCategory == category ? Color("FFC85C") : .gray)
+            .cornerRadius(17)
+            .frame(height: 27)
+            .onTapGesture {
+                if viewModel.selectedCategory == category {
+                    viewModel.selectedCategory = nil
+                } else {
+                    viewModel.selectedCategory = category
+                }
+                viewModel.filterCategory()
             }
-        } label: {
-            Text(category.rawValue)
-                .font(.system(size: 12, weight: .medium))
-                .foregroundColor(.white)
-                .padding(.vertical, 8)
-                .padding(.horizontal, 10)
-                .background(viewModel.selectedCategory == category ? Color("FFC85C") : .gray)
-                .cornerRadius(17)
-                .frame(height: 27)
-        }
     }
 }
 

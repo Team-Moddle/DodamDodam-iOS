@@ -28,7 +28,11 @@ final class InformationViewModel: ObservableObject {
     }
 
     func filterCategory() {
-        
+        if let category = selectedCategory {
+            searchList = infoList.filter { $0.category == category }
+        } else {
+            searchList = infoList
+        }
     }
     func filterSearch() {
         if serach.isEmpty {
