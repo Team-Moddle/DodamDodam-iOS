@@ -6,68 +6,122 @@ struct FacilityView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                Spacer()
-                    .frame(height: 16)
-                HStack(spacing: 7) {
+            ZStack {
+                VStack(spacing: 0) {
                     Spacer()
-                        .frame(width: 20)
-                    Button {
-                        num = num == 1 ? 0 : 1
-                    } label: {
-                        Text("병원")
-                            .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(.white)
-                            .padding(.vertical, 8)
-                            .padding(.horizontal, 10)
-                            .background(num == 1 ? Color("FFC85C") : .gray)
-                            .cornerRadius(17)
-                            .frame(height: 27)
-                    }
-                    Button {
-                        num = num == 2 ? 0 : 2
-                    } label: {
-                        Text("식당")
-                            .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(.white)
-                            .padding(.vertical, 8)
-                            .padding(.horizontal, 10)
-                            .background(num == 2 ? Color("FFC85C") : .gray)
-                            .cornerRadius(17)
-                            .frame(height: 27)
-                    }
-                    Button {
-                        num = num == 3 ? 0 : 3
-                    } label: {
-                        Text("놀이시설")
-                            .font(.system(size: 12, weight: .medium))
-                            .foregroundColor(.white)
-                            .padding(.vertical, 8)
-                            .padding(.horizontal, 10)
-                            .background(num == 3 ? Color("FFC85C") : .gray)
-                            .cornerRadius(17)
-                            .frame(height: 27)
+                        .frame(height: 16)
+                    HStack(spacing: 7) {
+                        Spacer()
+                            .frame(width: 20)
+                        Button {
+                            num = num == 1 ? 0 : 1
+                            num == 1 ? viewModel.fetchFilterHospital() : viewModel.fetchAppear()
+                        } label: {
+                            Text("병원")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.white)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 10)
+                                .background(num == 1 ? Color("FFC85C") : .gray)
+                                .cornerRadius(17)
+                                .frame(height: 27)
+                        }
+                        Button {
+                            num = num == 2 ? 0 : 2
+                            num == 2 ? viewModel.fetchFilterRestraunt() : viewModel.fetchAppear()
+                        } label: {
+                            Text("식당")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.white)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 10)
+                                .background(num == 2 ? Color("FFC85C") : .gray)
+                                .cornerRadius(17)
+                                .frame(height: 27)
+                        }
+                        Button {
+                            num = num == 3 ? 0 : 3
+                            num == 3 ? viewModel.fetchFilterPlayground() : viewModel.fetchAppear()
+                        } label: {
+                            Text("놀이시설")
+                                .font(.system(size: 12, weight: .medium))
+                                .foregroundColor(.white)
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 10)
+                                .background(num == 3 ? Color("FFC85C") : .gray)
+                                .cornerRadius(17)
+                                .frame(height: 27)
+                        }
+                        Spacer()
+                        Button {
+                            print("!!!!!")
+                        } label: {
+                            Image(systemName: "plus")
+                                .resizable()
+                                .foregroundColor(.black)
+                                .frame(width: 15, height: 15)
+                                .padding(8)
+                        }
+                        Spacer()
+                            .frame(width: 20)
+                        
                     }
                     Spacer()
+                        .frame(height: 16)
+                    List(viewModel.locationList, id: \.id) { model in
+                        LocationCell(data: model)
+                            .padding(.bottom, 8)
+                            .listRowInsets(EdgeInsets())
+                            .listRowSeparator(.hidden)
+                    }
+                    .listStyle(.inset)
+                    .padding(.horizontal, 20)
                 }
-                Spacer()
-                    .frame(height: 16)
-                List(viewModel.list, id: \.id) { model in
-                    LocationCell(data: model)
-                        .padding(.bottom, 8)
-                        .listRowInsets(EdgeInsets())
-                        .listRowSeparator(.hidden)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        SearchBar(search: $viewModel.search) {
+                            print(viewModel.search)
+                        }
+                    }
                 }
-                .listStyle(.inset)
-                .padding(.horizontal, 20)
+                VStack {
+                    Spacer()
+                    HStack(alignment: .center) {
+                        Spacer()
+                            .frame(width: 32)
+                        Image("hospital")
+                            .resizable()
+                            .frame(width: 23, height: 26)
+                        Spacer()
+                            .frame(width: 12)
+                        Text("우리 주위에 없는 시설이 있다면?")
+                            .font(.system(size: 12, weight: .medium))
+                            .foregroundColor(.white)
+                        Spacer()
+                        Button {
+                            print("신청하기")
+                        } label: {
+                            Text("신청하기")
+                                .padding(.vertical, 6)
+                                .padding(.horizontal, 9)
+                                .frame(height: 30)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .foregroundColor(Color("737886"))
+                                .font(.system(size: 11, weight: .bold))
+                        }
+                        Spacer()
+                            .frame(width: 20)
+                    }
+                    .frame(width: .infinity, height: 60)
+                    .background(Color("737886"))
+                    Spacer()
+                        .frame(height: 45)
+                }
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    SearchBar(search: $viewModel.search) {
-                        print(viewModel.search)
-                    }
-                }
+            .onAppear {
+                viewModel.fetchAppear()
             }
         }
     }
