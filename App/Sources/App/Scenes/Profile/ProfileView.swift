@@ -1,8 +1,29 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @StateObject var viewModel = ProfileViewModel()
     var body: some View {
-        Text("프로필 화면입니다.")
+        NavigationView {
+            VStack(spacing: 0) {
+                ProfileInformationView(profile: viewModel.profile)
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 21)
+                HStack {
+                    Text("자녀 정보")
+                        .font(.system(size: 15, weight: .medium))
+                        .foregroundColor(Color("6B6B6B"))
+                    Spacer()
+                    Button {
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .frame(width: 15, height: 15)
+                            .foregroundColor(.black)
+                    }
+                }
+                .padding(.horizontal, 20)
+            }
+        }
     }
 }
 
