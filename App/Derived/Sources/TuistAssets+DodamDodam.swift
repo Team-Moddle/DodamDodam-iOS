@@ -18,6 +18,7 @@
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum DodamDodamAsset {
   public static let _6B6B6B = DodamDodamColors(name: "6B6B6B")
+  public static let _737886 = DodamDodamColors(name: "737886")
   public static let _797979 = DodamDodamColors(name: "797979")
   public static let _969696 = DodamDodamColors(name: "969696")
   public static let a4B3Da = DodamDodamColors(name: "A4B3DA")
@@ -35,6 +36,7 @@ public enum DodamDodamAsset {
   public static let eeeeee = DodamDodamColors(name: "EEEEEE")
   public static let ffc85C = DodamDodamColors(name: "FFC85C")
   public static let googleLogoImage = DodamDodamImages(name: "googleLogoImage")
+  public static let hospital = DodamDodamImages(name: "hospital")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
