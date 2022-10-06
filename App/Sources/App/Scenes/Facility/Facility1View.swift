@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FacilityView: View {
+struct Facility1View: View {
     @StateObject var viewModel = FacilityViewModel()
     @State var num: Int = 0
     
@@ -133,8 +133,8 @@ struct FacilityView: View {
     }
 }
 
-struct FacilityView_Previews: PreviewProvider {
+struct Facility1View_Previews: PreviewProvider {
     static var previews: some View {
-        FacilityView()
+        Facility1View()
     }
 }

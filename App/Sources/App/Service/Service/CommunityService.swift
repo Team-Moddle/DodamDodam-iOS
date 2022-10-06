@@ -18,7 +18,8 @@ final class CommunityService {
                 title: dict["title"] as! String,
                 content: dict["content"] as! String,
                 location: dict["location"] as! String,
-                humanCount: dict["humanCount"] as! Int
+                humanCount: dict["humanCount"] as! Int,
+                category: dict["category"] as! FeatureCategory
             )
             res.append(comm)
         }

@@ -7,4 +7,5 @@ struct CommunityModel {
     let content: String
     let location: String
     let humanCount: Int
+    let category: FeatureCategory
 }

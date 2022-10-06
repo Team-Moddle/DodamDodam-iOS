@@ -99,7 +99,8 @@ struct DetailCommunityView_Previews: PreviewProvider {
             title: "asd",
             content: "Asd",
             location: "asd",
-            humanCount: 2
+            humanCount: 2,
+            category: .adhd
         ))
     }
 }
