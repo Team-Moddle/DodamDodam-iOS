@@ -69,15 +69,20 @@ struct FacilityView: View {
                     Spacer()
                         .frame(height: 16)
                     List(viewModel.locationList, id: \.id) { model in
-                        NavigationLink(
-                            destination: FacilityDetailView(data: model)) {
-                                LocationCell(data: model)
-                                    .padding(.bottom, 8)
-                                    .listRowInsets(EdgeInsets())
-                                    .listRowSeparator(.hidden)
+                        ZStack {
+                            NavigationLink {
+                                FacilityDetailView(data: model)
+                            } label: {
+                                EmptyView()
                             }
+                            .opacity(0)
+                            LocationCell(data: model)
+                        }
+                        .padding(.bottom, 8)
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
                     }
-                    .listStyle(.inset)
+                    .listStyle(.plain)
                     .padding(.horizontal, 20)
                 }
                 .navigationBarTitleDisplayMode(.inline)
