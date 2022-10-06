@@ -2,44 +2,41 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-final class CommunityService {
-    static let shared = CommunityService()
+final class InformationService {
+    static let shared = InformationService()
     private init() {}
     
-    func fetchCommunityList() async throws -> [CommunityModel] {
-        let docs = try await Firestore.firestore().collection("/comm").getDocuments()
-        var res = [CommunityModel]()
+    func fetchInformationList() async throws -> [InformationModel] {
+        let docs = try await Firestore.firestore().collection("/info").getDocuments()
+        var res = [InformationModel]()
         for snapshot in docs.documents {
             let dict = snapshot.data()
             
-            let comm = CommunityModel(
+            let info = InformationModel(
                 id: snapshot.documentID,
                 imageUrlString: dict["imageUrlString"] as! String,
                 title: dict["title"] as! String,
                 content: dict["content"] as! String,
-                location: dict["location"] as! String,
-                humanCount: dict["humanCount"] as! Int
+                likeCount: dict["likeCount"] as! Int
             )
-            res.append(comm)
+            res.append(info)
         }
         return res
     }
     
-    func createCommunity(
+    func createInfo(
         title: String,
         content: String,
-        imageUrl: String,
-        location: String
+        imageUrl: String
     ) async throws {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let data: [String: Any] = [
             "title": title,
             "content": content,
-            "location": location,
             "imageUrlString": imageUrl,
-            "humanCount": 0,
+            "likeCount": 0,
             "userPK": uid
         ]
-        _ = try await Firestore.firestore().collection("/comm").addDocument(data: data)
+        _ = try await Firestore.firestore().collection("/info").addDocument(data: data)
     }
 }
