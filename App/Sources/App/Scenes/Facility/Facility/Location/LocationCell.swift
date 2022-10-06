@@ -30,7 +30,7 @@ struct LocationCell: View {
                 Spacer()
                     .frame(height: 33)
                 HStack(spacing: 0) {
-                    Text(data.category.rawValue)
+                    Text(data.featureCategory.rawValue)
                         .font(.system(size: 8, weight: .bold))
                         .foregroundColor(.white)
                         .padding(.horizontal, 8)
