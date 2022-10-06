@@ -47,6 +47,17 @@ struct InformationView: View {
                     }
                 }
             }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    SearchBar(search: $viewModel.serach) {
+                        print(viewModel.serach)
+                    }
+                    .onChange(of: viewModel.serach) { _ in
+                        viewModel.filterSearch()
+                    }
+                }
+            }
         }
     }
 }

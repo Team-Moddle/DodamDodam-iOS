@@ -2,6 +2,8 @@ import Combine
 import Foundation
 
 final class InformationViewModel: ObservableObject {
+    @Published var serach: String = ""
+    @Published var searchList: [InformationModel] = []
     @Published var infoList: [InformationModel] = [
         .init(
             id: UUID().uuidString,
@@ -18,4 +20,15 @@ final class InformationViewModel: ObservableObject {
             likeCount: .random(in: 0...20)
         )
     ]
+    func fetchAppear() {
+        searchList = infoList
+    }
+
+    func filterSearch() {
+        if serach.isEmpty {
+            fetchAppear()
+        } else {
+            searchList = infoList.filter { $0.title.contains(serach) }
+        }
+    }
 }
