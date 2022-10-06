@@ -4,23 +4,10 @@ struct ProfileInformationView: View {
     let profile: ProfileModel
     var body: some View {
         HStack {
-            AsyncImage(
-                url: URL(string: profile.imageUrlString)) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 65, height: 65)
-                        .cornerRadius(32.5)
-                } placeholder: {
-                    Image(systemName: "person")
-                        .resizable()
-                        .scaledToFit()
-                        .padding()
-                        .foregroundColor(.white)
-                        .background(Color.gray)
-                        .frame(width: 65, height: 65)
-                        .cornerRadius(32.5)
-                }
+            Image(uiImage: UIImage(data: profile.imageUrlString) ?? UIImage())
+                .resizable()
+                .frame(width: 65, height: 65)
+                .cornerRadius(32.5)
             Spacer()
                 .frame(width: 14)
             VStack(
@@ -37,7 +24,7 @@ struct ProfileInformationView: View {
             }
             Spacer()
             NavigationLink {
-                EditProfileView()
+                EditProfileView(viewModel: EditProfileViewModel(prevProfile: profile))
             } label: {
                 VStack {
                     Spacer()
@@ -60,6 +47,6 @@ struct ProfileInformationView: View {
 
 struct ProfileInformationView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileInformationView(profile: .init(imageUrlString: "", name: "기무기영", address: "중국 상하이"))
+        ProfileInformationView(profile: .init(imageUrlString: Data(), name: "기무기영", address: "중국 상하이"))
     }
 }
