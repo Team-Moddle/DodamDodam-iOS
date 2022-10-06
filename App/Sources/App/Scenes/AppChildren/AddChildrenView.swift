@@ -98,6 +98,8 @@ struct AddChildrenView: View {
             Spacer()
             Group {
                 Button {
+                    viewModel.setChildren()
+                    dismiss()
                 } label: {
                     Text("완료")
                         .foregroundColor(.white)
