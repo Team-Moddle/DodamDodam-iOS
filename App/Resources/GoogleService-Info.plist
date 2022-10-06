@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>172120567525-nre7d0i65fcji9hv5s7qvfpd2lmijgj6.apps.googleusercontent.com</string>
+	<string>172120567525-6sb6rjb7co9pavojhkgphr2adrjatbr3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.172120567525-nre7d0i65fcji9hv5s7qvfpd2lmijgj6</string>
+	<string>com.googleusercontent.apps.172120567525-6sb6rjb7co9pavojhkgphr2adrjatbr3</string>
 	<key>API_KEY</key>
 	<string>AIzaSyA396n5BDTDfViyI9F5jETC-w38h9BTRxo</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.Moddle.DodamDodam</string>
+	<string>org.Moddle.DodamDodam.app</string>
 	<key>PROJECT_ID</key>
 	<string>dodamdodam-420b0</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:172120567525:ios:97725c43302275d1476e0c</string>
+	<string>1:172120567525:ios:0c097fd31a0afdec476e0c</string>
 </dict>
 </plist>

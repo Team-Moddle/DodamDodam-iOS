@@ -20,8 +20,12 @@ final class AuthService {
             idToken: idToken,
             rawNonce: nonce
         )
-        guard let res = try? await Auth.auth().signIn(with: cred) else { throw DodamError.unknown }
-        guard let user = try? await Firestore.firestore().collection("User").document(res.user.uid).getDocument() else { throw DodamError.unknown }
-        return (user.data()?["isFirst"] as? Bool ?? true) == true
+        do {
+            try await Auth.auth().signIn(with: cred)
+        } catch {
+            print(error.localizedDescription)
+            throw DodamError.unknown
+        }
+        return true
     }
 }

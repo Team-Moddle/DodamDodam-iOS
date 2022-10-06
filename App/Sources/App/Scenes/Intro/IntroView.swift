@@ -34,7 +34,7 @@ struct IntroView: View {
             SignInWithAppleButton { request in
                 request.requestedScopes = [.email]
                 let nonce = FirebaseAppleUtils.randomNonceString()
-                request.nonce = nonce
+                request.nonce = FirebaseAppleUtils.sha256(nonce)
                 viewModel.nonce = nonce
             } onCompletion: { res in
                 switch res {
