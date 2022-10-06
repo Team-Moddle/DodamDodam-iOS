@@ -8,7 +8,7 @@ struct HomeView: View {
             VStack(spacing: 0) {
                 Spacer()
                     .frame(height: 16)
-                List(viewModel.list, id: \.id) { model in
+                List(viewModel.searchList, id: \.id) { model in
                     ZStack {
                         NavigationLink {
                             DetailCommunityView(community: model)
@@ -32,7 +32,13 @@ struct HomeView: View {
                     SearchBar(search: $viewModel.serach) {
                         print(viewModel.serach)
                     }
+                    .onChange(of: viewModel.serach) { _ in
+                        viewModel.filterSearch()
+                    }
                 }
+            }
+            .onAppear {
+                viewModel.fetchAppear()
             }
         }
     }

@@ -86,6 +86,9 @@ struct FacilityView: View {
                         SearchBar(search: $viewModel.search) {
                             print(viewModel.search)
                         }
+                        .onChange(of: viewModel.search) { _ in
+                            viewModel.fetchFilterSearch()
+                        }
                     }
                 }
                 VStack {
