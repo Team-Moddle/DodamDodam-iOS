@@ -1,7 +1,7 @@
 import Foundation
 
 struct InformationModel {
-    let id: Int
+    let id: String
     let imageUrlString: String
     let title: String
     let content: String

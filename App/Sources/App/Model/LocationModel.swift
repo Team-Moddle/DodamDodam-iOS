@@ -1,7 +1,7 @@
 import Foundation
 
 struct LocationModel {
-    let id: Int
+    let id: String
     let name: String
     let address: String
     let imageUrlString: String

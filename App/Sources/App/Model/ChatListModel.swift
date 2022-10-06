@@ -1,7 +1,7 @@
 import Foundation
 
 struct ChatListModel {
-    let id: Int
+    let id: String
     let imageUrlString: String
     let name: String
     let address: String

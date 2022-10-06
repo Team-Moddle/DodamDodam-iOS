@@ -32,7 +32,7 @@ struct InformationDetailView: View {
 
                 Text(viewModel.information.content)
                     .lineLimit(nil)
-                    .foregroundColor(Color("525252"))
+                    .foregroundColor(.gray)
                     .padding(.top, 40)
             }
             .padding(.horizontal, 16)
