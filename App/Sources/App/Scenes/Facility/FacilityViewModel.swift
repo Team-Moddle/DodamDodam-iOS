@@ -75,4 +75,12 @@ class FacilityViewModel: ObservableObject {
     func fetchFilterPlayground() {
         locationList = list.filter { $0.category == .playground }
     }
+
+    func fetchFilterSearch() {
+        if search.isEmpty {
+            fetchAppear()
+        } else {
+            locationList = list.filter { $0.name.contains(search) }
+        }
+    }
 }
