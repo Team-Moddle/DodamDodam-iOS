@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Dodam.png",
+      "filename" : "Dod.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Dodam 1.png",
+      "filename" : "Dod 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Dodam 2.png",
+      "filename" : "Dod 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

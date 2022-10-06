@@ -1,13 +1,14 @@
 import Combine
 import Foundation
 import SwiftUI
+import FirebaseAuth
 
 final class IntroViewModel: ObservableObject {
     @AppStorage("scene") var scene: SceneState = .intro
     @Published var nonce = ""
     
     init() {
-        scene = AuthService.shared.checkIsLoggedIn() ? .main : .intro
+//        scene = AuthService.shared.checkIsLoggedIn() ? .main : .intro
     }
     
     func appleSigninCompleted(cred: Data) {

@@ -14,6 +14,8 @@ struct IntroView: View {
     var body: some View {
         VStack{
             Image("Dodam")
+                .resizable()
+                .frame(width: 181, height: 245)
                 .scaledToFit()
             Button {
                 print("button")

@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 final class ProfileUserDefaults {
     static let shared = ProfileUserDefaults()
@@ -74,7 +75,7 @@ final class ProfileUserDefaults {
     }
 
     func fetchProfile() -> ProfileModel {
-        guard let data = userDefaults.object(forKey: "profile") as? [String: AnyObject] else { return .init(imageUrlString: Data(), name: "",  address: "")}
+        guard let data = userDefaults.object(forKey: "profile") as? [String: AnyObject] else { return .init(imageUrlString: UIImage(named: "Dod")?.pngData() ?? .init(), name: "김기영", address: "인천광역시 미추홀구") }
         return ProfileModel(
             imageUrlString: (data["imageUrlString"]) as? Data ?? Data(),
             name: (data["name"]) as? String ?? "",
