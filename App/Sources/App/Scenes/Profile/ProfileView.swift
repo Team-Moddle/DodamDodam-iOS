@@ -5,6 +5,8 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
+                Spacer()
+                    .frame(height: 19)
                 ProfileInformationView(profile: viewModel.profile)
                     .padding(.horizontal, 20)
                     .padding(.bottom, 21)
@@ -13,7 +15,8 @@ struct ProfileView: View {
                         .font(.system(size: 15, weight: .medium))
                         .foregroundColor(Color("6B6B6B"))
                     Spacer()
-                    Button {
+                    NavigationLink {
+                        AddChildrenView()
                     } label: {
                         Image(systemName: "plus")
                             .resizable()
@@ -22,7 +25,19 @@ struct ProfileView: View {
                     }
                 }
                 .padding(.horizontal, 20)
+                Spacer()
+                    .frame(height: 13)
+                List(viewModel.child, id: \.name) {
+                    ProfileCell(child: $0)
+                        .padding(.bottom, 13)
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
+                }
+                .padding(.horizontal, 20)
+                .listStyle(.inset)
             }
+            .navigationTitle("내정보")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }
