@@ -36,8 +36,8 @@ struct ProfileInformationView: View {
                     .foregroundColor(Color("797979"))
             }
             Spacer()
-            Button {
-                print("수정 티비")
+            NavigationLink {
+                EditProfileView()
             } label: {
                 VStack {
                     Spacer()
