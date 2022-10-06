@@ -3,12 +3,17 @@ import SwiftUI
 import SwiftyChat
 
 struct ChatDetailView: View {
+    @Environment(\.dismiss) var dismiss
     let chatData: ChatListModel
 
     var body: some View {
-        VStack {
-            
-        }
+        Image("Chat")
+            .resizable()
+            .ignoresSafeArea()
+            .navigationBarBackButtonHidden(true)
+            .onTapGesture {
+                dismiss()
+            }
     }
 }
 
