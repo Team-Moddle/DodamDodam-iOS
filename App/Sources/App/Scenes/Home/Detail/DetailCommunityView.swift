@@ -57,7 +57,7 @@ struct DetailCommunityView: View {
                         Button {
                             
                         } label: {
-                            Label("채팅하기", systemImage: "message")
+                            Label("신청하기", systemImage: "airplane")
                                 .foregroundColor(.white)
                                 .padding(.vertical, 10)
                                 .frame(maxWidth: .infinity)
