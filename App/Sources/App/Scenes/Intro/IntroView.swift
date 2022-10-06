@@ -13,6 +13,8 @@ struct IntroView: View {
     @StateObject var viewModel = IntroViewModel()
     var body: some View {
         VStack{
+            Image("Dodam")
+                .scaledToFit()
             Button {
                 print("button")
             } label: {
@@ -30,6 +32,7 @@ struct IntroView: View {
                     .stroke(Color.black, lineWidth: 1)
             )
             .padding(.horizontal, 16)
+            .padding(.top, 40)
             
             SignInWithAppleButton { request in
                 request.requestedScopes = [.email]
