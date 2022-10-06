@@ -52,7 +52,7 @@ struct CommunityCell: View {
 struct CommunityCell_Previews: PreviewProvider {
     static var previews: some View {
         CommunityCell(data: .init(
-            id: 0,
+            id: UUID().uuidString,
             imageUrlString: "",
             title: "우리 아이 ADHD일까요?",
             content: "asdfa",

@@ -51,7 +51,7 @@ struct ChatCell: View {
 struct ChatCell_Previews: PreviewProvider {
     static var previews: some View {
         ChatCell(chatData: .init(
-            id: 0,
+            id: UUID().uuidString,
             imageUrlString: "",
             name: "김기영",
             address: "주안동",

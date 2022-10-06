@@ -42,6 +42,6 @@ struct InformationDetailView: View {
 
 struct InformationDetail_Previews: PreviewProvider {
     static var previews: some View {
-        InformationDetailView(viewModel: .init(information: .init(id: 0, imageUrlString: "https://avatars.githubusercontent.com/u/74440939?v=4", title: "asdf", content: "asd", likeCount: 2)))
+        InformationDetailView(viewModel: .init(information: .init(id: UUID().uuidString, imageUrlString: "https://avatars.githubusercontent.com/u/74440939?v=4", title: "asdf", content: "asd", likeCount: 2)))
     }
 }

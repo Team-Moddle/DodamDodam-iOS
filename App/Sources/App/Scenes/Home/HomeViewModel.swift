@@ -5,7 +5,7 @@ class HomeViewModel: ObservableObject {
     @Published var searchList: [CommunityModel] = []
     @Published var list: [CommunityModel] = [
         .init(
-            id: 0,
+            id: UUID().uuidString,
             imageUrlString: "https://cdn.pixabay.com/photo/2015/02/04/08/03/baby-623417_1280.jpg",
             title: "우리 아이 이대로 괜찮을까?",
             content: """
@@ -23,7 +23,7 @@ class HomeViewModel: ObservableObject {
             humanCount: 15
         ),
         .init(
-            id: 1,
+            id: UUID().uuidString,
             imageUrlString: "https://www.amc.seoul.kr/asan/imageDown/healthinfo/20180820?fileName=adultADHDsymptom.jpg",
             title: "우리 아이 ADHD일까?",
             content: """
@@ -49,7 +49,7 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
             humanCount: 19
         ),
         .init(
-            id: 2,
+            id: UUID().uuidString,
             imageUrlString: "https://d14cvuwsb9oabg.cloudfront.net/c_fill,fl_lossy,w_960/v1637137142/ysyag5w9gzxexp0ikago.jpg",
             title: "말 안듣는 아이 올바르게 혼내는 방법!",
             content: """
@@ -65,7 +65,7 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
             humanCount: 18
         ),
         .init(
-            id: 3,
+            id: UUID().uuidString,
             imageUrlString: "https://file.mk.co.kr/meet/yonhap/2020/07/16/image_readtop_2020_727202_0_060111.jpg",
             title: "갑각류 알레르기 아이 엄마의 아이 식단 레시피",
             content: """
@@ -79,7 +79,7 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
             humanCount: 10
         ),
         .init(
-            id: 4,
+            id: UUID().uuidString,
             imageUrlString: "https://src.hidoc.co.kr/image/lib/2022/2/24/1645689830338_0.jpg",
             title: "알레르기 있는 우리 아이 무엇을 먹여야 할까?",
             content: """
@@ -99,7 +99,7 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
             humanCount: 13
         ),
         .init(
-            id: 5,
+            id: UUID().uuidString,
             imageUrlString: "https://cdn.discordapp.com/attachments/1026851673001431091/1027191553749430383/1.png",
             title: "똑똑한 우리 아이, 영재일까? 아닐까?",
             content: """
@@ -115,7 +115,7 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
             humanCount: 40
         ),
         .init(
-            id: 6,
+            id: UUID().uuidString,
             imageUrlString: "https://cdn.discordapp.com/attachments/1026851673001431091/1027188668038926416/IMG_0010.jpg",
             title: "행복한 아이로 키우는 절대 방법",
             content: """
@@ -177,7 +177,7 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
             humanCount: 30
         ),
         .init(
-            id: 7,
+            id: UUID().uuidString,
             imageUrlString: "https://www.amc.seoul.kr/asan/imageDown/healthstory/20151110?fileName=13923689.jpg",
             title: "우리 아이에게 맞는 알맞은 학습법",
             content: """
@@ -220,7 +220,7 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
             humanCount: 20
         ),
         .init(
-            id: 8,
+            id: UUID().uuidString,
             imageUrlString: "https://cdn.discordapp.com/attachments/1026851673001431091/1027193840152625162/Screen_Shot_2022-10-05_at_21.21.24.png",
             title: "또래보다 작은 아이 성장 부진일까?",
             content: """

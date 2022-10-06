@@ -21,7 +21,7 @@ struct ChatDetailView_Previews: PreviewProvider {
     static var previews: some View {
         ChatDetailView(
             chatData: .init(
-                id: 0,
+                id: UUID().uuidString,
                 imageUrlString: "",
                 name: "김기영",
                 address: "인천 미추홀구",

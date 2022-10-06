@@ -94,7 +94,7 @@ struct DetailCommunityView: View {
 struct DetailCommunityView_Previews: PreviewProvider {
     static var previews: some View {
         DetailCommunityView(community: .init(
-            id: 0,
+            id: UUID().uuidString,
             imageUrlString: "https://avatars.githubusercontent.com/u/74440939?v=4",
             title: "asd",
             content: "Asd",

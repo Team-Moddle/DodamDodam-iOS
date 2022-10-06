@@ -138,7 +138,7 @@ struct FacilityDetailView: View {
 struct FacilityDetailView_Previews: PreviewProvider {
     static var previews: some View {
         FacilityDetailView(data: .init(
-            id: 0,
+            id: UUID().uuidString,
             name: "안녕",
             address: "서울특별시 강남구",
             imageUrlString: "https://cdn.discordapp.com/attachments/1026851673001431091/1027230330891010249/unknown.png",
