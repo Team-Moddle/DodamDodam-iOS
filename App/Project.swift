@@ -13,7 +13,8 @@ let project = Project.makeModule(
         .SPM.FirebaseFirestore,
         .SPM.FirebaseFirestoreSwift,
         .SPM.FirebaseStorage,
-        .SPM.SwiftyChat
+        .SPM.SwiftyChat,
+        .framework(path: "DaumMap.embeddedframework/DaumMap.framework")
     ],
     resources: ["Resources/**"],
     entitlements: Path("Support/DodamDodam.entitlements"),

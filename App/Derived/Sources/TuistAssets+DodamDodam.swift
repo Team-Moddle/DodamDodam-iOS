@@ -37,6 +37,7 @@ public enum DodamDodamAsset {
   public static let ffc85C = DodamDodamColors(name: "FFC85C")
   public static let ffef5C = DodamDodamColors(name: "FFEF5C")
   public static let fff6E1 = DodamDodamColors(name: "FFF6E1")
+  public static let chat = DodamDodamImages(name: "Chat")
   public static let googleLogoImage = DodamDodamImages(name: "googleLogoImage")
   public static let hospital = DodamDodamImages(name: "hospital")
 }
