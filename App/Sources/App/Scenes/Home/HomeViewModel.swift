@@ -2,7 +2,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var serach: String = ""
-    @Published var searchList: [CommunityModel] = []
+
     @Published var list: [CommunityModel] = [
         .init(
             id: UUID().uuidString,
@@ -20,7 +20,8 @@ class HomeViewModel: ObservableObject {
 초록우산어린이재단 아동복지연구소 이필영 소장은 “사회적 관계가 한정되고 정보가 매몰되는 등 코로나19 속 아동의 고립된 생활이 디지털 문해력 저하에 영향을 주고 있다”면서 “아동이 비판적으로 정보를 습득하고 올바르게 활용할 수 있도록 디지털 문해력 교육을 강화해야 한다”고 강조했다.
 """,
             location: "서울특별시 강남구",
-            humanCount: 15
+            humanCount: 15,
+            category: .etc
         ),
         .init(
             id: UUID().uuidString,
@@ -46,7 +47,8 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
 과잉행동 증상으로는 손발을 계속 꼼지락거리거나 차분히 앉아있는 것을 괴로워하며 말이 많다. 인내심이 부족해 자신의 차례를 못 기다려 다른 사람의 활동을 방해하고 간섭하며 상황에 맞지 않는 말을 불쑥 꺼내기도 한다. 충동적으로 화를 내고 친구를 때리거나 위험한 행동을 서슴없이 하고 TV나 비디오게임에 지나치게 흥미를 보이기도 한다.
 """,
             location: "인천광역시 미추홀구",
-            humanCount: 19
+            humanCount: 19,
+            category: .adhd
         ),
         .init(
             id: UUID().uuidString,
@@ -62,7 +64,8 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
 아들에겐 매를 댄 적도 있고 딸에게는 얼차려를 주기도 했다. 일명 ‘엎드려뻗쳐’ 라는 기합이다. 내 딴에는 아이들에게 벌도 주고 체력도 기르기 위한 생각이었다. 그렇지만 가장 현명한 방법은 벌을 주지 않고 아이들을 대화로써 이끄는 것이다.
 """,
             location: "경기도 수원시",
-            humanCount: 18
+            humanCount: 18,
+            category: .etc
         ),
         .init(
             id: UUID().uuidString,
@@ -76,7 +79,8 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
 ** 새우와 연근, 파래는 후기이유식 부터 섭취가능 하나 새우의 경우에는 갑각류 알레르기 반응이 있을수도 있으니 돌 이후 먹이길 권장합니다.
 """,
             location: "인천광역시 부평구",
-            humanCount: 10
+            humanCount: 10,
+            category: .allergy
         ),
         .init(
             id: UUID().uuidString,
@@ -96,7 +100,8 @@ ADHD의 대표적인 증상으로 알려진 주의력결핍은 오래 집중하�
 오늘도 나와 아이를 위한 슬기로운 영양생활, 식품 알레르기 Q&A 함께 보아요!
 """,
             location: "서울특별시 종로구",
-            humanCount: 13
+            humanCount: 13,
+            category: .allergy
         ),
         .init(
             id: UUID().uuidString,
@@ -112,7 +117,8 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
 한국카우프만아동지능검사는 영재아동 판별 및 좌뇌 IQ, 우뇌 IQ, 인지과정처리 IQ, 습득도 IQ 측정을 하는 검사인데요, 정보처리이론을 바탕으로 개발된 검사로서 기존 내용 중심의 검사와 달리 아이가 왜 그러한 정도의 수행을 하였는지에 대한 설명이 가능합니다. 만 3세부터 할 수 있는 검사로, 하위요인 점수를 기초로 아이의 강약 분석이 가능하며 구체적인 대안을 제시해주는 검사입니다.
 """,
             location: "대구광역시 수성구",
-            humanCount: 40
+            humanCount: 40,
+            category: .etc
         ),
         .init(
             id: UUID().uuidString,
@@ -174,7 +180,8 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
 24. 사고를 엄마가 정리해주자 아 이래서 이렇고 이렇게됐구나 같은 .. 아이들은 그게 잘안된다고 한다.
 """,
             location: "경상남도 양산시 평산동",
-            humanCount: 30
+            humanCount: 30,
+            category: .etc
         ),
         .init(
             id: UUID().uuidString,
@@ -217,7 +224,8 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
 아이가 짜증이 많아지거나, 화를 내는 경우가 많아지는 것도 너무 걱정하지 않으셔도 되는데요, 호르몬 변화를 겪으면서 아이가 일시적으로 그러는 것 뿐이기 때문에  전문가들은 오히려 화를 속으로 삭히는 것보다는 그때그때 터뜨려서 감정 표현을 하는 것이 오히려 다행으로 여기거나 사춘기에 걸맞게 잘 자라고 있다는 증거로 보기도 합니다. 화를 쌓아오다가 어느 날 폭발하게 되면 더 심각한 결과가 많이 돌아오기 때문입니다.
 """,
             location: "서울특별시 강남구",
-            humanCount: 20
+            humanCount: 20,
+            category: .etc
         ),
         .init(
             id: UUID().uuidString,
@@ -230,19 +238,78 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
 '저신장증' 정도는 아니더라도, 자녀가 또래보다 키가 작아 걱정이라면 자녀의 '숙면'에 신경 써보자. 잠이 오지 않는 아이를 무조건 일찍 재우려고 하기보다, 깊게 잠들 수 있는 환경을 만들어주는 게 좋다. 부모가 늦게까지 TV를 보느라 불을 켜 놓는다거나, 잠들기 전 과도하게 PC나 스마트폰을 사용하지 않도록 지도해야 한다. 낮 시간에 신체 활동량을 늘려주는 것도 방법이다. 운동은 성장판과 골격을 자극해 성장호르몬 분비를 돕는다. 잠들기 3~4시간 전에 운동을 하면 오히려 숙면을 방해할 수 있어 주의한다. 운동은 하루에 30분 이상, 주 5회 이상 규칙적으로 하는 것이 적당하다.
 """,
             location: "서울특별시 강남구",
-            humanCount: 20
+            humanCount: 20,
+            category: .etc
         ),
+        .init(
+            id: UUID().uuidString,
+            imageUrlString: "http://image.dongascience.com/Photo/2018/01/1515739358349[1].jpg",
+            title: "말문이 트이지 않는 우리 아이, 자폐 스펙트럼일까? ",
+            content: """
+“24개월 아이가 이름을 불러도 반응이 없고, 잘 웃지 않으며, 특정 행동을 반복, 집착하는 경향이 있습니다. 우리 아이가 자폐스펙트럼장애일까요?”
+
+자폐스펙트럼장애는 증상과 중증도가 다양하고, 시기나 발달 수준, 환경에 따라 증상이 다를 수 있어 진단이 쉽지 않다. 자폐스펙트럼장애에 대해 순천향대 부천병원 정신건강의학과 이지원 교수와 함께 알아본다.
+
+자폐스펙트럼장애(Autism Spectrum Disorder, ASD)는 사회적 상호작용과 의사소통에 지속적인 결함을 보이면서 제한적이고 반복적인 행동, 흥미, 활동을 보이는 발달 장애를 말한다. 최근에는 유병률이 많이 늘어 대략 50명 중 2명이 ‘자폐스펙트럼장애’일 정도로 흔한 질환이다. 변화를 극도로 싫어하고 시각·청각·촉각과 같은 감각 정보에 대해 과잉·과소 반응을 하는 행동 특징은 모든 사람에게 조금씩 나타날 수 있으나, 일상생활이 어려울 정도로 심하고 사회적 의사소통과 상호작용 결함이 함께 나타날 때 ‘자폐스펙트럼장애’로 진단한다.
+""",
+            location: "대구광역시 중구",
+            humanCount: 20,
+            category: .autism
+        ),
+        .init(
+            id: UUID().uuidString,
+            imageUrlString: "https://newsimg-hams.hankookilbo.com/2021/12/20/f513ba1d-3bf4-496f-8292-ac474a6b7d6c.jpg",
+            title: "우리 자녀의 아토피가 낫지 않는 이유",
+            content: """
+본 연구에서는 아토피 증상이 있는 영유아기 자녀의 부모가 양육 과정에서 경험하는 어려움과 지원에 대한 요구를 알아보기 위하여 아토피 증상 영유아기 자녀를 양육하는 12인의 부모를 대상으로 면접을 실시하였다. 연구결과 아토피 자녀를 양육하는 부모들은 자녀의 가려움증으로 인해 잠을 자지 못하는 고통, 죄책감이나 염려로 인한 심리적 고통, 신뢰할 수 있는 치료 정보의 부족, 아토피 치료로 인한 장기 결석과 교사의 인식 부족, 아토피 관리를 위한 부탁이 잘 수용되지 않음으로 인한 어려움, 유아교육기관에서 제공하는 음식과 관련된 어려움, 그리고 또래관계에서의 어려움을 경험하고 있었다. 둘째, 아토피 증상이 있는 영유아기 자녀를 양육하는 부모들이 원하는 지원에는 의료비 지원, 아토피 관련 부모교육과 심리치료, 아토피 자녀를 믿고 맡길 수 있는 유아교육기관 운영, 유아교사와 유아들을 위한 아토피 관련 교육, 그리고 자녀의 아토피 관리를 위한 가정과 기관의 협조 체계 강화가 포함되었다.
+""",
+            location: "대전광역시 중구",
+            humanCount: 20,
+            category: .atopy
+        )
 
     ]
+    @Published var illnessList: [CommunityModel] = []
+    @Published var selectedCategory: FeatureCategory?
+    
+    
     func fetchAppear() {
-        searchList = list
+        illnessList = list
+    }
+    
+    func filterCategory() {
+        if let selectedCategory {
+            illnessList = list.filter { $0.category == selectedCategory }
+        } else {
+            illnessList = list
+        }
+    }
+
+    func fetchFilterAdhd() {
+        illnessList = list.filter { $0.category == .adhd }
+    }
+
+    func fetchFilterAllergy() {
+        illnessList = list.filter { $0.category == .allergy }
+    }
+
+    func fetchFilterAutism() {
+        illnessList = list.filter { $0.category == .autism }
+    }
+    
+    func fetchFilterAtopy() {
+        illnessList = list.filter { $0.category == .atopy }
+    }
+    
+    func fetchFilterEtc() {
+        illnessList = list.filter { $0.category == .etc }
     }
 
     func filterSearch() {
         if serach.isEmpty {
             fetchAppear()
         } else {
-            searchList = list.filter { $0.title.contains(serach) }
+            
         }
     }
 }

@@ -16,7 +16,7 @@ struct MainView: View {
             case 2:
                 InformationView()
             case 3:
-                FacilityView()
+                Facility1View()
             default:
                 ProfileView()
             }

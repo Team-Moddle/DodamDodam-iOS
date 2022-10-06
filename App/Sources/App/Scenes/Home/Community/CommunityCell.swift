@@ -57,7 +57,8 @@ struct CommunityCell_Previews: PreviewProvider {
             title: "우리 아이 ADHD일까요?",
             content: "asdfa",
             location: "서울특별시 강남구",
-            humanCount: 15
+            humanCount: 15,
+            category: .adhd
         ))
     }
 }

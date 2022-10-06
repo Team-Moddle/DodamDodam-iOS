@@ -6,7 +6,7 @@ enum Category: String {
     case playground = "놀이시설"
 }
 
-enum FeatureCategory: String {
+enum FeatureCategory: String, CaseIterable {
     case adhd = "ADHD"
     case allergy = "알레르기"
     case autism = "자폐"
