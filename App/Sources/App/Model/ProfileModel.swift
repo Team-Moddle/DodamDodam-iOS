@@ -1,7 +1,7 @@
 import Foundation
 
 struct ProfileModel {
-    let imageUrlString: String
+    let imageUrlString: Data
     let name: String
     let address: String
 }

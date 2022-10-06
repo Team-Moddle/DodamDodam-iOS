@@ -2,7 +2,7 @@ import SwiftUI
 import PhotosUI
 
 struct EditProfileView: View {
-    @StateObject var viewModel = EditProfileViewModel()
+    @StateObject var viewModel: EditProfileViewModel
     @State var isPresentedImagePicker = false
     @Environment(\.dismiss) var dismiss
 
@@ -29,7 +29,7 @@ struct EditProfileView: View {
             HStack {
                 Text("닉네임")
                     .font(.system(size: 20, weight: .bold))
-                TextField(viewModel.profile.name, text: $viewModel.name)
+                TextField(viewModel.name, text: $viewModel.name)
             }
             .padding(.leading, 20)
             HStack {
@@ -40,13 +40,16 @@ struct EditProfileView: View {
             .padding(.leading, 20)
             Spacer()
             Button {
+                viewModel.setProfile()
+                dismiss()
             } label: {
                 Text("완료")
                     .frame(maxWidth: .infinity, maxHeight: 40)
-                    .background(Color("FFC85C"))
+                    .background(viewModel.name.isEmpty || viewModel.address.isEmpty ? Color("969696") : Color("FFC85C"))
                     .cornerRadius(48)
                     .foregroundColor(.white)
             }
+            .disabled(viewModel.name.isEmpty || viewModel.address.isEmpty)
             .padding(.horizontal, 20)
             Spacer()
                 .frame(height: 60)
@@ -72,7 +75,7 @@ struct EditProfileView: View {
 
 struct EditProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        EditProfileView()
+        EditProfileView(viewModel: .init(prevProfile: .init(imageUrlString: .init(), name: "", address: "")))
     }
 }
 
