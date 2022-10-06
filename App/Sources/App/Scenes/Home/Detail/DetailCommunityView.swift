@@ -9,66 +9,72 @@ struct DetailCommunityView: View {
     }
     var body: some View {
         ScrollView(showsIndicators: false) {
-            VStack {
-                AsyncImage(url: URL(string: viewModel.community.imageUrlString)) { image in
-                    image
-                        .resizable()
-                        .frame(maxWidth: .infinity)
-                        .scaledToFit()
-                } placeholder: {
-                    Color.gray
-                        .frame(maxWidth: .infinity)
-                }
-                .offset(y: 30)
-                
-                VStack(alignment: .leading) {
-                    Rectangle()
-                        .fill(.gray)
-                        .frame(width: 50, height: 3)
-                        .padding(.top, 15)
-                        .cornerRadius(5)
-                    HStack {
-                        Label("지민맘", systemImage: "person.crop.circle")
-                        Spacer()
-                    }
-                    .padding(.top, 20)
-                    
-                    Text(viewModel.community.title)
-                        .font(.largeTitle)
-                    Text(viewModel.community.location)
-                        .font(.body)
-                        .foregroundColor(.gray)
-                    HStack(alignment: .bottom) {
-                        Text("5.0")
-                        ForEach(0..<5) { _ in
-                            Image(systemName: "star.fill")
-                                .foregroundColor(Color("FFEF5C"))
-                        }
-                        Text("(6)")
-                            .foregroundColor(.blue)
-                            .font(.caption)
-                    }
-                    .padding(.top, 2)
-                    Text(viewModel.community.content)
-                        .padding(.top, 5)
-                        .lineLimit(nil)
-                        .multilineTextAlignment(.leading)
-                    Button {
-                        
-                    } label: {
-                        Label("채팅하기", systemImage: "message")
-                            .foregroundColor(.white)
-                            .padding(.vertical, 10)
+            ZStack(alignment: .topTrailing) {
+                VStack {
+                    AsyncImage(url: URL(string: viewModel.community.imageUrlString)) { image in
+                        image
+                            .resizable()
                             .frame(maxWidth: .infinity)
-                            .background(Color("FFC85C"))
-                            .cornerRadius(16)
+                            .scaledToFit()
+                    } placeholder: {
+                        Color.gray
+                            .frame(maxWidth: .infinity)
                     }
+                    .offset(y: 30)
+                    
+                    VStack(alignment: .leading) {
+                        Rectangle()
+                            .fill(.gray)
+                            .frame(width: 50, height: 3)
+                            .padding(.top, 15)
+                            .cornerRadius(5)
+                        HStack {
+                            Label("지민맘", systemImage: "person.crop.circle")
+                            Spacer()
+                        }
+                        .padding(.top, 20)
+                        
+                        Text(viewModel.community.title)
+                            .font(.largeTitle)
+                        Text(viewModel.community.location)
+                            .font(.body)
+                            .foregroundColor(.gray)
+                        HStack(alignment: .bottom) {
+                            Text("5.0")
+                            ForEach(0..<5) { _ in
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(Color("FFEF5C"))
+                            }
+                            Text("(6)")
+                                .foregroundColor(.blue)
+                                .font(.caption)
+                        }
+                        .padding(.top, 2)
+                        Text(viewModel.community.content)
+                            .padding(.top, 5)
+                            .lineLimit(nil)
+                            .multilineTextAlignment(.leading)
+                        Button {
+                            
+                        } label: {
+                            Label("채팅하기", systemImage: "message")
+                                .foregroundColor(.white)
+                                .padding(.vertical, 10)
+                                .frame(maxWidth: .infinity)
+                                .background(Color("FFC85C"))
+                                .cornerRadius(16)
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .frame(maxWidth: .infinity)
+                    .background(.white)
+                    .offset(y: -30)
+                    .cornerRadius(10, corners: [.topLeft, .topRight])
                 }
-                .padding(.horizontal, 16)
-                .frame(maxWidth: .infinity)
-                .background(.white)
-                .offset(y: -30)
-                .cornerRadius(10, corners: [.topLeft, .topRight])
+                Label("\(Int.random(in: 1...viewModel.community.humanCount))/\(viewModel.community.humanCount)", systemImage: "person")
+                    .offset(y: 50)
+                    .padding(.trailing, 6)
+                    .foregroundColor(.white)
             }
         }
         .toolbar {
