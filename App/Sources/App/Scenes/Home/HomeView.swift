@@ -9,10 +9,19 @@ struct HomeView: View {
                 Spacer()
                     .frame(height: 16)
                 List(viewModel.list, id: \.id) { model in
-                    CommunityCell(data: model)
-                        .padding(.bottom, 8)
-                        .listRowInsets(EdgeInsets())
-                        .listRowSeparator(.hidden)
+                    ZStack {
+                        NavigationLink {
+                            DetailCommunityView(community: model)
+                        } label: {
+                            EmptyView()
+                        }
+                        .opacity(0.0)
+                        .buttonStyle(.plain)
+                        CommunityCell(data: model)
+                    }
+                    .padding(.bottom, 8)
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.inset)
                 .padding(.horizontal, 20)
