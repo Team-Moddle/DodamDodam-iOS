@@ -15,7 +15,6 @@ struct ChatListView: View {
                             .listRowInsets(EdgeInsets())
                             .listRowSeparator(.hidden)
                     }
-
                 }
                 .listStyle(.inset)
                 .padding(.horizontal, 20)

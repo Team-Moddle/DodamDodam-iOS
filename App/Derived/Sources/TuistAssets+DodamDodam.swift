@@ -17,9 +17,11 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum DodamDodamAsset {
+  public static let _585858 = DodamDodamColors(name: "585858")
   public static let _6B6B6B = DodamDodamColors(name: "6B6B6B")
   public static let _737886 = DodamDodamColors(name: "737886")
   public static let _797979 = DodamDodamColors(name: "797979")
+  public static let _898989 = DodamDodamColors(name: "898989")
   public static let _969696 = DodamDodamColors(name: "969696")
   public static let a4B3Da = DodamDodamColors(name: "A4B3DA")
   public static let accentColor = DodamDodamColors(name: "AccentColor")
@@ -32,13 +34,20 @@ public enum DodamDodamAsset {
   public static let main05 = DodamDodamColors(name: "Main05")
   public static let main06 = DodamDodamColors(name: "Main06")
   public static let mainColor = DodamDodamColors(name: "MainColor")
+  public static let d9D9D9 = DodamDodamColors(name: "D9D9D9")
   public static let dadada = DodamDodamColors(name: "DADADA")
   public static let eeeeee = DodamDodamColors(name: "EEEEEE")
   public static let ffc85C = DodamDodamColors(name: "FFC85C")
   public static let ffef5C = DodamDodamColors(name: "FFEF5C")
+  public static let fff6E1 = DodamDodamColors(name: "FFF6E1")
   public static let chat = DodamDodamImages(name: "Chat")
   public static let googleLogoImage = DodamDodamImages(name: "googleLogoImage")
   public static let hospital = DodamDodamImages(name: "hospital")
+  public static let map = DodamDodamImages(name: "map")
+  public static let map1 = DodamDodamImages(name: "map1")
+  public static let map2 = DodamDodamImages(name: "map2")
+  public static let map3 = DodamDodamImages(name: "map3")
+  public static let map4 = DodamDodamImages(name: "map4")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
