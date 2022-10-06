@@ -2,6 +2,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var serach: String = ""
+    @Published var searchList: [CommunityModel] = []
     @Published var list: [CommunityModel] = [
         .init(
             id: 0,
@@ -233,4 +234,15 @@ A. 저희 연구소뿐만 아니라 모든 사람, 전 세계 많은 사람들�
         ),
 
     ]
+    func fetchAppear() {
+        searchList = list
+    }
+
+    func filterSearch() {
+        if serach.isEmpty {
+            fetchAppear()
+        } else {
+            searchList = list.filter { $0.title.contains(serach) }
+        }
+    }
 }

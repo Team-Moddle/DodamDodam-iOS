@@ -75,16 +75,14 @@ struct FacilityView: View {
                             } label: {
                                 EmptyView()
                             }
-                            .opacity(0.0)
-                            
+                            .opacity(0)
                             LocationCell(data: model)
-                                .padding(.bottom, 2)
-                                .listRowInsets(EdgeInsets())
-                                .listRowSeparator(.hidden)
                         }
-                        
+                        .padding(.bottom, 8)
+                        .listRowInsets(EdgeInsets())
+                        .listRowSeparator(.hidden)
                     }
-                    .listStyle(.inset)
+                    .listStyle(.plain)
                     .padding(.horizontal, 20)
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -92,6 +90,9 @@ struct FacilityView: View {
                     ToolbarItem(placement: .principal) {
                         SearchBar(search: $viewModel.search) {
                             print(viewModel.search)
+                        }
+                        .onChange(of: viewModel.search) { _ in
+                            viewModel.fetchFilterSearch()
                         }
                     }
                 }
