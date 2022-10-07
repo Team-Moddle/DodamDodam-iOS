@@ -117,7 +117,9 @@ struct FacilityView: View {
                             } label: {
                                 EmptyView()
                             }
-                            .opacity(0)
+                            .opacity(0.0)
+                            .buttonStyle(.plain)
+                            
                             LocationCell(data: model)
                         }
                         .padding(.bottom, 8)

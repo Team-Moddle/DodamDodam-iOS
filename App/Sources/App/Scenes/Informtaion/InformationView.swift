@@ -19,7 +19,8 @@ struct InformationView: View {
                         } label: {
                             EmptyView()
                         }
-                        .opacity(0)
+                        .opacity(0.0)
+                        .buttonStyle(.plain)
                         
                         HStack(alignment: .center) {
                             AsyncImage(

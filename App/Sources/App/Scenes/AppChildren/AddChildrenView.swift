@@ -63,19 +63,19 @@ struct AddChildrenView: View {
             Group {
                 AddChildrenButton(
                     isSelected: $viewModel.bool1,
-                    name: "천식"
+                    name: "ADHD"
                 )
                 AddChildrenButton(
                     isSelected: $viewModel.bool2,
-                    name: "알레르기성 비염"
+                    name: "알레르기"
                 )
                 AddChildrenButton(
                     isSelected: $viewModel.bool3,
-                    name: "아토피 피부염"
+                    name: "자폐"
                 )
                 AddChildrenButton(
                     isSelected: $viewModel.bool4,
-                    name: "기관지염"
+                    name: "아토피"
                 )
                 AddChildrenButton(
                     isSelected: $viewModel.bool5,
